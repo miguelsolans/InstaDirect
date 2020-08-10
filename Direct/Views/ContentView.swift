@@ -23,12 +23,7 @@ struct ContentView: View {
                 if networkManager.loading {
                     Text("Loading...")
                 } else {
-                    /*List {
-                        ForEach((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
-                            
-                            ThreadRow(thread: thread)
-                        }
-                    }*/
+                    
                     List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
                         NavigationLink(destination: ThreadView(thread: thread)) {
                             ThreadRow(thread: thread)

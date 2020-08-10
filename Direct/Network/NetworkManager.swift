@@ -28,7 +28,7 @@ class NetworkManager: ObservableObject {
         return
     }
     private func loadData() {
-        let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox")!
+        let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox/?persistentBadging=true&folder&limit=10&thread_message_limit=20")!
         var request = URLRequest(url: url)
         
         request.setValue(
@@ -53,6 +53,7 @@ class NetworkManager: ObservableObject {
             let direct = try! JSONDecoder().decode(Direct.self, from: data)
             // print("Data Received")
             // print(direct.viewer?.username)
+            // print(direct.inbox?.threads)
             DispatchQueue.main.async {
                 self.direct = direct
                 self.loading = false
