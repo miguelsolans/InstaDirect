@@ -22,6 +22,8 @@ struct ContentView: View {
                 
                 if networkManager.loading {
                     Text("Loading...")
+                } else if networkManager.error {
+                    Text("Error!")
                 } else {
                     
                     List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in

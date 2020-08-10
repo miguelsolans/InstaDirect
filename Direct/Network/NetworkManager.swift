@@ -13,22 +13,24 @@ import Combine
 class NetworkManager: ObservableObject {
     var didChange = PassthroughSubject<NetworkManager, Never>()
     // ProcessInfo.processInfo.environment
-    var cookie = ProcessInfo.processInfo.environment["cookie"] ?? ""
-    var appId = ProcessInfo.processInfo.environment["appId"] ?? ""
-    var appClaim = ProcessInfo.processInfo.environment["appClaim"] ?? ""
+    var cookie = ""
+    var appId = ""
+    var appClaim = ""
     
     @Published var loading = false
+    @Published var error = false
     @Published var direct = Direct()
     
     init() {
         self.loading = true
+        self.error = false
         self.loadData()
     }
     func getThread(thread: Thread) -> Void {
         return
     }
     private func loadData() {
-        let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox/?persistentBadging=true&folder&limit=10&thread_message_limit=20")!
+        let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox/?persistentBadging=true&limit=10&thread_message_limit=10")!
         var request = URLRequest(url: url)
         
         request.setValue(
@@ -49,15 +51,20 @@ class NetworkManager: ObservableObject {
         print("Requesting Data")
         URLSession.shared.dataTask(with: request) { (data, _, _) in
             guard let data = data else { return }
-            
-            let direct = try! JSONDecoder().decode(Direct.self, from: data)
-            // print("Data Received")
-            // print(direct.viewer?.username)
-            // print(direct.inbox?.threads)
-            DispatchQueue.main.async {
-                self.direct = direct
+            do {
+                let direct = try JSONDecoder().decode(Direct.self, from: data)
+                    
+                DispatchQueue.main.async {
+                    self.direct = direct
+                    self.loading = false
+                }
+                
+            } catch {
+                print(error)
                 self.loading = false
+                self.error = true
             }
+            
         }.resume()
     }
 }
