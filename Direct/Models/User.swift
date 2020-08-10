@@ -13,5 +13,5 @@ struct User: Decodable {
     var username: String = ""
     var full_name: String = ""
     var profile_pic_url: String = ""
-    
+    var friendship_status: FriendshipStatus?
 }

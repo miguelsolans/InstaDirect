@@ -14,37 +14,15 @@ struct ThreadView: View {
     
     init(thread: Thread) {
         self.thread = thread
+        self.thread.items.reverse()
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                //Text(self.thread.thread_type)
+        ScrollView {
+            // self.thread.items.reverse()
+            ForEach(self.thread.items, id: \.item_id) { item in
                 
-                List((self.thread.items), id: \.item_id) { item in
-                    
-                    //Text("Item...")
-                    if item.item_type == "text" {
-                        
-                        if self.networkManager.direct.viewer?.pk != item.user_id {
-                            Text("\(self.thread.users[0].username): \(item.text ?? "")")
-                        } else {
-                            Text("Me: \(item.text ?? "")")
-                        }
-                        //Text("Text...")
-                    } else {
-                        Text("Media Type")
-                    }
-                    
-                    // Text("Item")
-                    // if(item.)
-                    // if(item.type )
-                }
-                /*List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
-                    NavigationLink(destination: ThreadView(thread: thread)) {
-                        ThreadRow(thread: thread)
-                    }
-                }*/
+                BubbleView(item: item, viewer: self.networkManager.direct.viewer!)
             }
         }.navigationBarTitle(Text(thread.thread_title), displayMode: .inline)
             .padding()

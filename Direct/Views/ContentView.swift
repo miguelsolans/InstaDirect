@@ -18,7 +18,7 @@ struct ContentView: View {
         var body: some View {
         NavigationView {
             
-            VStack {
+            //VStack {
                 
                 if networkManager.loading {
                     Text("Loading...")
@@ -32,8 +32,8 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-        }.navigationBarTitle(Text("Direct"))
+            //}
+        }.navigationBarTitle("Direct")
     }
 }
 

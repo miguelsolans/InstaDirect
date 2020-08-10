@@ -19,10 +19,13 @@ struct AvatarView: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: image)
+            /*Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
+                .frame(width: 100, height: 100)*/
+            Image(uiImage: image)
+                .font(.system(size: 40))
+            
         }.onReceive(imageLoader.didChange) { data in
             self.image = UIImage(data: data) ?? UIImage()
         }

@@ -13,6 +13,6 @@ struct Direct: Decodable {
     var status: String = ""
     var viewer: User?
     var inbox: Inbox?
-    var pending_requests_total: Int = 0
+    var pending_requests_total: Int?
     
 }

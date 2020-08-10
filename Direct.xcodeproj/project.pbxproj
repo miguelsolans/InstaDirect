@@ -23,6 +23,8 @@
 		8B97EB4624E06C3C002525D8 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4524E06C3C002525D8 /* AvatarView.swift */; };
 		8B97EB4824E06EA6002525D8 /* ThreadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4724E06EA6002525D8 /* ThreadRow.swift */; };
 		8B97EB4A24E07260002525D8 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4924E07260002525D8 /* ThreadView.swift */; };
+		8B97EB4D24E1A794002525D8 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4C24E1A794002525D8 /* BubbleView.swift */; };
+		8B97EB4F24E1B528002525D8 /* FriendshipStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		8B97EB4724E06EA6002525D8 /* ThreadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadRow.swift; sourceTree = "<group>"; };
 		8B97EB4924E07260002525D8 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
 		8B97EB4B24E0CF12002525D8 /* Direct.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Direct.entitlements; sourceTree = "<group>"; };
+		8B97EB4C24E1A794002525D8 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				8B97EB3124DF5BC5002525D8 /* User.swift */,
 				8B97EB3D24E03D5F002525D8 /* Item.swift */,
 				8B97EB4124E04B5A002525D8 /* Direct.swift */,
+				8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				8B97EB4524E06C3C002525D8 /* AvatarView.swift */,
 				8B97EB4724E06EA6002525D8 /* ThreadRow.swift */,
 				8B97EB4924E07260002525D8 /* ThreadView.swift */,
+				8B97EB4C24E1A794002525D8 /* BubbleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 			files = (
 				8B97EB1624DF5B4B002525D8 /* AppDelegate.swift in Sources */,
 				8B97EB3E24E03D5F002525D8 /* Item.swift in Sources */,
+				8B97EB4D24E1A794002525D8 /* BubbleView.swift in Sources */,
 				8B97EB4824E06EA6002525D8 /* ThreadRow.swift in Sources */,
+				8B97EB4F24E1B528002525D8 /* FriendshipStatus.swift in Sources */,
 				8B97EB4A24E07260002525D8 /* ThreadView.swift in Sources */,
 				8B97EB4024E0494D002525D8 /* ImageLoader.swift in Sources */,
 				8B97EB3024DF5BBF002525D8 /* Thread.swift in Sources */,

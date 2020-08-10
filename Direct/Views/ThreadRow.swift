@@ -30,10 +30,16 @@ struct ThreadRow: View {
         HStack {
             AvatarView(withURL: thread!.users[0].profile_pic_url)
             
-            VStack {
-                Text(thread!.thread_title)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(alignment: .center) {
+                    Text(thread!.thread_title)
+                        .font(.headline)
+                }
+                
                 Text(self.parseDate(date: Double(thread!.last_activity_at)))
-            }
+                    .font(.callout)
+                    .lineLimit(1)
+            }.padding(.vertical, 12)
         }
     }
 }
