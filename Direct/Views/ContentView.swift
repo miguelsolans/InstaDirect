@@ -10,29 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
-    // @ObservedObject var image:UIImage = UIImage()
-    // @State var image:UIImage = UIImage()
     
-    
-    // var threads = networkManager.direct
-        var body: some View {
+    var body: some View {
         NavigationView {
             
-            //VStack {
-                
-                if networkManager.loading {
-                    Text("Loading...")
-                } else if networkManager.error {
-                    Text("Error!")
-                } else {
+            if networkManager.loading {
+                Text("Loading...")
+            } else if networkManager.error {
+                Text("Error!")
+            } else {
+                List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
                     
-                    List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
-                        NavigationLink(destination: ThreadView(thread: thread)) {
-                            ThreadRow(thread: thread)
-                        }
+                    NavigationLink(destination: ThreadView(thread: thread)) {
+                        ThreadRow(thread: thread)
                     }
                 }
-            //}
+            }
         }.navigationBarTitle("Direct")
     }
 }

@@ -19,7 +19,6 @@ struct ThreadView: View {
     
     var body: some View {
         ScrollView {
-            // self.thread.items.reverse()
             ForEach(self.thread.items, id: \.item_id) { item in
                 
                 BubbleView(item: item, viewer: self.networkManager.direct.viewer!)
