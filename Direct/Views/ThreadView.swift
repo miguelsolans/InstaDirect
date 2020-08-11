@@ -18,12 +18,22 @@ struct ThreadView: View {
     }
     
     var body: some View {
-        ScrollView {
-            ForEach(self.thread.items, id: \.item_id) { item in
-                
-                BubbleView(item: item, viewer: self.networkManager.direct.viewer!)
-            }
-        }.navigationBarTitle(Text(thread.thread_title), displayMode: .inline)
-            .padding()
+        
+        TabView {
+            MessagesView(thread: self.thread, viewer: self.networkManager.direct.viewer!)
+                .tabItem {
+                    Image(systemName: "message")
+                    Text("Messages")
+                }
+
+            Text("Tab 2")
+                .tabItem {
+                    Image(systemName: "rectangle.stack.person.crop")
+                    Text("Media")
+                }
+        }
+        /**/
+        
+            
     }
 }
