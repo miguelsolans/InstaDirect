@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SwiftyInsta
 
 
 class NetworkManager: ObservableObject {
@@ -16,6 +17,8 @@ class NetworkManager: ObservableObject {
     var cookie = ""
     var appId = ""
     var appClaim = ""
+    var credentials: Credentials?
+    var handler: APIHandler?
     
     @Published var loading = false
     @Published var error = false
@@ -26,9 +29,35 @@ class NetworkManager: ObservableObject {
         self.error = false
         self.loadData()
     }
+    
+    func login(username: String, password: String) {
+        self.credentials = Credentials(username: username, password: password, verifyBy: .text)
+        self.handler = APIHandler()
+        
+        self.handler?.authenticate(with: .user(self.credentials!)) {
+            switch $0 {
+                case .success(let response, _):
+                    print("Login successfull!")
+                case .failure(let error):
+                    print("Error!")
+                
+            }
+        }
+    }
+    
     func getThread(thread: Thread) -> Void {
         return
     }
+    
+    func loadMore(cursor: String) -> Void {
+        print("Next Cursor: \(cursor)")
+        
+        // TODO: apend to threads
+        
+        
+        // TODO: update oldest_cursor
+    }
+    
     private func loadData() {
         let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox/?persistentBadging=true&limit=10&thread_message_limit=10")!
         var request = URLRequest(url: url)

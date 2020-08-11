@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B31CD9624E2A3B700504C8E /* SwiftyInsta in Frameworks */ = {isa = PBXBuildFile; productRef = 8B31CD9524E2A3B700504C8E /* SwiftyInsta */; };
+		8B899AA824E30AC400D6073A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B899AA724E30AC400D6073A /* Media.swift */; };
+		8B899AAC24E3482F00D6073A /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B899AAB24E3482F00D6073A /* MessagesView.swift */; };
+		8B899AAE24E3484D00D6073A /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B899AAD24E3484D00D6073A /* MediaView.swift */; };
 		8B97EB1624DF5B4B002525D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB1524DF5B4B002525D8 /* AppDelegate.swift */; };
 		8B97EB1824DF5B4B002525D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB1724DF5B4B002525D8 /* SceneDelegate.swift */; };
 		8B97EB1C24DF5B4C002525D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B97EB1B24DF5B4C002525D8 /* Assets.xcassets */; };
@@ -28,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B899AA724E30AC400D6073A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		8B899AAB24E3482F00D6073A /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		8B899AAD24E3484D00D6073A /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		8B97EB1224DF5B4B002525D8 /* Direct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Direct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B97EB1524DF5B4B002525D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B97EB1724DF5B4B002525D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B31CD9624E2A3B700504C8E /* SwiftyInsta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +120,7 @@
 				8B97EB3D24E03D5F002525D8 /* Item.swift */,
 				8B97EB4124E04B5A002525D8 /* Direct.swift */,
 				8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */,
+				8B899AA724E30AC400D6073A /* Media.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +142,8 @@
 				8B97EB4724E06EA6002525D8 /* ThreadRow.swift */,
 				8B97EB4924E07260002525D8 /* ThreadView.swift */,
 				8B97EB4C24E1A794002525D8 /* BubbleView.swift */,
+				8B899AAB24E3482F00D6073A /* MessagesView.swift */,
+				8B899AAD24E3484D00D6073A /* MediaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +164,9 @@
 			dependencies = (
 			);
 			name = Direct;
+			packageProductDependencies = (
+				8B31CD9524E2A3B700504C8E /* SwiftyInsta */,
+			);
 			productName = Direct;
 			productReference = 8B97EB1224DF5B4B002525D8 /* Direct.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 8B97EB0924DF5B4B002525D8;
+			packageReferences = (
+				8B31CD9424E2A3B700504C8E /* XCRemoteSwiftPackageReference "SwiftyInsta" */,
+			);
 			productRefGroup = 8B97EB1324DF5B4B002525D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,10 +227,12 @@
 			files = (
 				8B97EB1624DF5B4B002525D8 /* AppDelegate.swift in Sources */,
 				8B97EB3E24E03D5F002525D8 /* Item.swift in Sources */,
+				8B899AAC24E3482F00D6073A /* MessagesView.swift in Sources */,
 				8B97EB4D24E1A794002525D8 /* BubbleView.swift in Sources */,
 				8B97EB4824E06EA6002525D8 /* ThreadRow.swift in Sources */,
 				8B97EB4F24E1B528002525D8 /* FriendshipStatus.swift in Sources */,
 				8B97EB4A24E07260002525D8 /* ThreadView.swift in Sources */,
+				8B899AA824E30AC400D6073A /* Media.swift in Sources */,
 				8B97EB4024E0494D002525D8 /* ImageLoader.swift in Sources */,
 				8B97EB3024DF5BBF002525D8 /* Thread.swift in Sources */,
 				8B97EB4624E06C3C002525D8 /* AvatarView.swift in Sources */,
@@ -223,6 +242,7 @@
 				8B97EB3824DF62A1002525D8 /* ContentView.swift in Sources */,
 				8B97EB2E24DF5BB3002525D8 /* Inbox.swift in Sources */,
 				8B97EB3224DF5BC5002525D8 /* User.swift in Sources */,
+				8B899AAE24E3484D00D6073A /* MediaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B31CD9424E2A3B700504C8E /* XCRemoteSwiftPackageReference "SwiftyInsta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheM4hd1/SwiftyInsta.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B31CD9524E2A3B700504C8E /* SwiftyInsta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B31CD9424E2A3B700504C8E /* XCRemoteSwiftPackageReference "SwiftyInsta" */;
+			productName = SwiftyInsta;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B97EB0A24DF5B4B002525D8 /* Project object */;
 }
