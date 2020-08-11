@@ -13,4 +13,6 @@ struct Item: Decodable {
     var user_id: Int64 = 0
     var item_type: String = ""
     var text: String?
+    var media: Media?
+    
 }
