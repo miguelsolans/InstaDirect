@@ -24,7 +24,10 @@ struct AvatarView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)*/
             Image(uiImage: image)
-                .font(.system(size: 40))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
             
         }.onReceive(imageLoader.didChange) { data in
             self.image = UIImage(data: data) ?? UIImage()
