@@ -13,11 +13,4 @@ struct FriendshipStatus: Decodable {
     var blocking: Bool = false
     var is_bestie: Bool = false
     var is_restricted: Bool = false
-    /*"following": true,
-    "blocking": false,
-    "is_private": true,
-    "incoming_request": false,
-    "outgoing_request": false,
-    "is_bestie": true,
-    "is_restricted": false*/
 }
