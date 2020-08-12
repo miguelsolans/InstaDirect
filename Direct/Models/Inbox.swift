@@ -11,4 +11,10 @@ import Foundation
 struct Inbox: Decodable {
     var oldest_cursor: String = ""
     var threads: [Thread]?
+    
+    
+    mutating func update(inbox: Inbox) -> Void {
+        self.oldest_cursor = inbox.oldest_cursor
+        self.threads?.append(contentsOf: inbox.threads!)
+    }
 }

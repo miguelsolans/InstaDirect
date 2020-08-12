@@ -17,6 +17,7 @@ class NetworkManager: ObservableObject {
     var cookie = ""
     var appId = ""
     var appClaim = ""
+    
     var credentials: Credentials?
     var handler: APIHandler?
     
@@ -53,6 +54,42 @@ class NetworkManager: ObservableObject {
         print("Next Cursor: \(cursor)")
         
         // TODO: apend to threads
+        let url = URL(string: "https://www.instagram.com/direct_v2/web/inbox/?persistentBadging=true&limit=10&thread_message_limit=10&cursor=\(cursor)")!
+        var request = URLRequest(url: url)
+        
+        request.setValue(
+            self.cookie,
+            forHTTPHeaderField: "Cookie"
+        )
+
+        request.setValue(
+            self.appId,
+            forHTTPHeaderField: "X-IG-App-ID"
+        )
+
+        request.setValue(
+            self.appClaim,
+            forHTTPHeaderField: "X-IG-WWW-Claim"
+        )
+        
+        URLSession.shared.dataTask(with: request) { (data, _, _) in
+            guard let data = data else { return }
+            do {
+                let direct = try JSONDecoder().decode(Direct.self, from: data)
+                    
+                DispatchQueue.main.async {
+                    
+                    self.direct.inbox?.update(inbox: direct.inbox!)
+                    self.loading = false
+                }
+                
+            } catch {
+                print(error)
+                self.loading = false
+                self.error = true
+            }
+            
+        }.resume()
         
         
         // TODO: update oldest_cursor
@@ -77,7 +114,6 @@ class NetworkManager: ObservableObject {
             forHTTPHeaderField: "X-IG-WWW-Claim"
         )
         
-        print("Requesting Data")
         URLSession.shared.dataTask(with: request) { (data, _, _) in
             guard let data = data else { return }
             do {

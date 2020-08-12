@@ -31,6 +31,7 @@ struct ContentView: View {
                         Button(action: {
                             
                             self.networkManager.loadMore(cursor: self.networkManager.direct.inbox!.oldest_cursor)
+                            
                             print("Load more...")
                         }) {
                             Text("More")
