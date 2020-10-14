@@ -36,7 +36,8 @@ struct ThreadRow: View {
                         .font(.headline)
                 }
                 
-                Text(self.parseDate(date: Double(thread!.last_activity_at)))
+                //Text(self.parseDate(date: Double(thread!.last_activity_at)))
+                Text(thread?.parseDate() ?? "")
                     .font(.callout)
                     .lineLimit(1)
             }.padding(.vertical, 12)

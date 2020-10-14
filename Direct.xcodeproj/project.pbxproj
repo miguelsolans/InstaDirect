@@ -29,6 +29,8 @@
 		8B97EB4A24E07260002525D8 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4924E07260002525D8 /* ThreadView.swift */; };
 		8B97EB4D24E1A794002525D8 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4C24E1A794002525D8 /* BubbleView.swift */; };
 		8B97EB4F24E1B528002525D8 /* FriendshipStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */; };
+		8BD18B1E2531FDD800EC6851 /* Credentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD18B1C2531FDD800EC6851 /* Credentials.xcdatamodeld */; };
+		8BF08D5B24E9ADAF007C79AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF08D5A24E9ADAF007C79AA /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		8B97EB4B24E0CF12002525D8 /* Direct.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Direct.entitlements; sourceTree = "<group>"; };
 		8B97EB4C24E1A794002525D8 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		8B97EB4E24E1B528002525D8 /* FriendshipStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipStatus.swift; sourceTree = "<group>"; };
+		8BD18B1D2531FDD800EC6851 /* Credentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Credentials.xcdatamodel; sourceTree = "<group>"; };
+		8BF08D5A24E9ADAF007C79AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				8B97EB2024DF5B4C002525D8 /* LaunchScreen.storyboard */,
 				8B97EB2324DF5B4C002525D8 /* Info.plist */,
 				8B97EB1D24DF5B4C002525D8 /* Preview Content */,
+				8BD18B1C2531FDD800EC6851 /* Credentials.xcdatamodeld */,
 			);
 			path = Direct;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				8B97EB4C24E1A794002525D8 /* BubbleView.swift */,
 				8B899AAB24E3482F00D6073A /* MessagesView.swift */,
 				8B899AAD24E3484D00D6073A /* MediaView.swift */,
+				8BF08D5A24E9ADAF007C79AA /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,12 +241,14 @@
 				8B899AA824E30AC400D6073A /* Media.swift in Sources */,
 				8B97EB4024E0494D002525D8 /* ImageLoader.swift in Sources */,
 				8B97EB3024DF5BBF002525D8 /* Thread.swift in Sources */,
+				8BD18B1E2531FDD800EC6851 /* Credentials.xcdatamodeld in Sources */,
 				8B97EB4624E06C3C002525D8 /* AvatarView.swift in Sources */,
 				8B97EB4224E04B5A002525D8 /* Direct.swift in Sources */,
 				8B97EB1824DF5B4B002525D8 /* SceneDelegate.swift in Sources */,
 				8B97EB3524DF5E27002525D8 /* NetworkManager.swift in Sources */,
 				8B97EB3824DF62A1002525D8 /* ContentView.swift in Sources */,
 				8B97EB2E24DF5BB3002525D8 /* Inbox.swift in Sources */,
+				8BF08D5B24E9ADAF007C79AA /* LoginView.swift in Sources */,
 				8B97EB3224DF5BC5002525D8 /* User.swift in Sources */,
 				8B899AAE24E3484D00D6073A /* MediaView.swift in Sources */,
 			);
@@ -461,6 +469,19 @@
 			productName = SwiftyInsta;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8BD18B1C2531FDD800EC6851 /* Credentials.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8BD18B1D2531FDD800EC6851 /* Credentials.xcdatamodel */,
+			);
+			currentVersion = 8BD18B1D2531FDD800EC6851 /* Credentials.xcdatamodel */;
+			path = Credentials.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8B97EB0A24DF5B4B002525D8 /* Project object */;
 }

@@ -53,17 +53,17 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "cookie"
-            value = ""
+            value = "sessionid=356670749%3AnIAntgkkYN39LZ%3A9"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "appId"
-            value = ""
+            value = "936619743392459"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "appClaim"
-            value = ""
+            value = "hmac.AR2eq_lHk5-C8XA_xB0Wjo3ECbMRt0qqwxOib7o-MqX3khaO"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

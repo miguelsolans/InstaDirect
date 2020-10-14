@@ -13,9 +13,19 @@ struct ContentView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     
+    
     var body: some View {
         
         NavigationView {
+            
+            
+            
+            /*if(!networkManager.logged) {
+                LoginView(networkManager: self.networkManager)
+            } else {
+                
+                Text("Hello Miguel Solans")
+            }*/
             
             if networkManager.loading {
                 Text("Loading...")
@@ -23,7 +33,7 @@ struct ContentView: View {
                 
                 List((networkManager.direct.inbox?.threads)!, id: \.thread_id) { thread in
                     
-                    NavigationLink(destination: ThreadView(thread: thread)) {
+                    NavigationLink(destination: ThreadView(thread: thread, viewer: self.networkManager.direct.viewer!)) {
                         ThreadRow(thread: thread)
                     }
                 }.navigationBarTitle(Text("Direct"))

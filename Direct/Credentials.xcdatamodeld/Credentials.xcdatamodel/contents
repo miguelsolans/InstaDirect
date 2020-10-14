@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Auth" representedClassName="Auth" syncable="YES" codeGenerationType="class">
+        <attribute name="appClaim" optional="YES" attributeType="String"/>
+        <attribute name="appId" optional="YES" attributeType="String"/>
+        <attribute name="cookie" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Auth" positionX="-4262.63671875" positionY="-2802.44140625" width="128" height="88"/>
+    </elements>
+</model>

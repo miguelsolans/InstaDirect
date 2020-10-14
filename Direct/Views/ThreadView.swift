@@ -10,17 +10,19 @@ import SwiftUI
 
 struct ThreadView: View {
     var thread: Thread
-    @ObservedObject var networkManager = NetworkManager()
+    var viewer: User
+    // @ObservedObject var networkManager = NetworkManager()
     
-    init(thread: Thread) {
+    init(thread: Thread, viewer: User) {
         self.thread = thread
+        self.viewer = viewer
         self.thread.items.reverse()
     }
     
     var body: some View {
         
         TabView {
-            MessagesView(thread: self.thread, viewer: self.networkManager.direct.viewer!)
+            MessagesView(thread: self.thread, viewer: self.viewer)
                 .tabItem {
                     Image(systemName: "message")
                     Text("Messages")
@@ -32,8 +34,6 @@ struct ThreadView: View {
                     Text("Media")
                 }
         }
-        /**/
-        
             
     }
 }

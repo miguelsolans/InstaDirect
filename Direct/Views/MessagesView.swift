@@ -11,12 +11,11 @@ import SwiftUI
 struct MessagesView: View {
     var thread: Thread
     var viewer: User
-    @ObservedObject var networkManager = NetworkManager()
+    // @ObservedObject var networkManager = NetworkManager()
     
     init(thread: Thread, viewer: User) {
         self.thread = thread
         self.viewer = viewer
-        // self.thread.items.reverse()
     }
     
     var body: some View {

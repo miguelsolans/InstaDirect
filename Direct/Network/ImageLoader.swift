@@ -18,6 +18,7 @@ class ImageLoader: ObservableObject {
     }
     
     init(urlString: String) {
+        // If Url is nil, return nothing from function
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

@@ -19,10 +19,6 @@ struct AvatarView: View {
     
     var body: some View {
         VStack {
-            /*Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)*/
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)

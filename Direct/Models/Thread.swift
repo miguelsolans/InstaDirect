@@ -18,4 +18,18 @@ struct Thread: Decodable {
     var thread_type: String = ""
     var thread_title: String = ""
     var items: [Item]
+    
+    
+    
+    func parseDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+         
+        let date = Date(timeIntervalSince1970: Double(self.last_activity_at)/1000000)
+         
+        // US English Locale (en_US)
+        dateFormatter.locale = Locale(identifier: "pt_PT")
+        return dateFormatter.string(from: date)
+    }
 }
